@@ -175,9 +175,25 @@ The full pin configuration is included in the `project.ioc` file.
 6. Tilt or move the device to observe the OLED measurements and buzzer response.
 7. Use the hold button to freeze the displayed pitch and roll readings.
 
+
 ## Project Photos and Demo
 
-Photos of the hardware setup, wiring diagram, and demonstration video will be added here.
+### Project Demonstration
+
+[Watch my project presentation and hardware demonstration on YouTube](https://www.youtube.com/watch?v=Wyx7LZYfKUg)
+
+In this video, I go over the project design, explain the hardware and software, and demonstrate the device working.
+
+### Final Project Report
+
+[View my final technical report](Documentation/Final%20Project%20Report%20-%20Yousef%20Ahmadzai.pdf)
+
+The report includes my system block diagram, hardware setup, angle calculations, testing results, and what I learned from building the device.
+
+### Hardware Photos
+
+Photos of the STM32 setup, MPU6050, OLED display, buttons, and buzzer are available in the [Images folder](Images/).
+  
 
 ## What I Learned
 
