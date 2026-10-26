@@ -2,6 +2,12 @@
  
 An STM32-based leveling device that measures tilt and vibration using an MPU6050 accelerometer. The system displays live measurements on an OLED screen and uses a buzzer to warn when the device is tilted too far or experiences excessive vibration.
 
+
+![Smart Leveling Device hardware demonstration](Images/Full-System-Demo.jpg)
+
+*Completed STM32 leveling device showing the OLED display, buzzer, and hardware setup.*
+  
+
 ## Overview
 
 For this project, I built a leveling and vibration monitoring system using the STM32 NUCLEO-F303K8 microcontroller. The goal was to create a device that could measure its orientation, display the readings, and alert the user when it was no longer level.
