@@ -3,7 +3,7 @@
 An STM32-based leveling device that measures tilt and vibration using an MPU6050 accelerometer. The system displays live measurements on an OLED screen and uses a buzzer to warn when the device is tilted too far or experiences excessive vibration.
 
 
-![Smart Leveling Device hardware demonstration](Images/Full-System-Demo.jpg)
+<img src="Images/Full-System-Demo.jpg" width="450" alt="Completed Smart Leveling Device">
 
 *Completed STM32 leveling device showing the OLED display, buzzer, and hardware setup.*
   
@@ -199,25 +199,28 @@ The report includes my system block diagram, hardware setup, angle calculations,
 
 ### Hardware Photos
 
-**OLED Display**
+| OLED Display | STM32 and MPU6050 Wiring |
+|:---:|:---:|
+| <img src="Images/OLED-Display.jpg" width="300" alt="OLED showing pitch, roll, and vibration"> | <img src="Images/STM32-MPU6050-Wiring.jpg" width="300" alt="STM32 and MPU6050 breadboard wiring"> |
 
-![OLED displaying pitch, roll, and vibration measurements](Images/OLED-Display.jpg)
-
-**STM32 and MPU6050 Wiring**
-
-![STM32 and MPU6050 breadboard wiring](Images/STM32-MPU6050-Wiring.jpg)
-
-**MPU6050 Accelerometer**
-
-![MPU6050 accelerometer module](Images/MPU6050-Sensor.jpg)
-
-**Active Buzzer**
-
-![Active buzzer module](Images/Active-Buzzer.jpg)
+| MPU6050 Accelerometer | Active Buzzer |
+|:---:|:---:|
+| <img src="Images/MPU6050-Sensor.jpg" width="300" alt="MPU6050 accelerometer"> | <img src="Images/Active-Buzzer.jpg" width="300" alt="Active buzzer module"> |
 
 Additional hardware photos are available in the [Images folder](Images/).
-  
-  
+
+
+## Challenges and Troubleshooting
+
+One thing I had to work on with this project was getting the accelerometer readings to be stable enough to use. Since the MPU6050 is sensitive to movement, the pitch and roll values could fluctuate even when I wasn't intentionally changing the angle. To help with this, I added a smoothing filter that uses 70% of the previous reading and 30% of the new reading. This made the measurements easier to read on the OLED without having them constantly jump around.
+
+Another thing I noticed during testing was that the buzzer would respond to movement faster than the OLED would update its displayed status. The warning system uses the raw vibration value while the display uses a filtered value, so there can be a slight difference in when each responds. I kept the buzzer response separate so it could react to sudden movement without waiting for the displayed measurements to catch up.
+
+I also originally planned on adding an LED indication system with green, yellow, and red LEDs depending on how close the device was to exceeding the angle limit. After getting the OLED and buzzer working, I decided it wasn't really necessary anymore since the screen already displayed the actual angle and the buzzer warned when the limit was exceeded.
+
+One thing I would improve in the future is the physical setup. Right now the device uses a breadboard with a lot of jumper wires, so I would want to make the wiring cleaner and put everything into a proper enclosure. I would also like to make it battery powered instead of needing a USB connection, which would make it easier to use when checking whether a shelf or another surface is level.
+
+
 ## What I Learned
 
 This project gave me more experience working with STM32 microcontrollers and connecting multiple components through I2C and GPIO. One of the main parts was getting the accelerometer readings into a useful format and making the displayed angles stable enough to read.
