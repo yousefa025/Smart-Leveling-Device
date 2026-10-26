@@ -196,11 +196,28 @@ In this video, I go over the project design, explain the hardware and software, 
 
 The report includes my system block diagram, hardware setup, angle calculations, testing results, and what I learned from building the device.
 
+
 ### Hardware Photos
 
-Photos of the STM32 setup, MPU6050, OLED display, buttons, and buzzer are available in the [Images folder](Images/).
-  
+**OLED Display**
 
+![OLED displaying pitch, roll, and vibration measurements](Images/OLED-Display.jpg)
+
+**STM32 and MPU6050 Wiring**
+
+![STM32 and MPU6050 breadboard wiring](Images/STM32-MPU6050-Wiring.jpg)
+
+**MPU6050 Accelerometer**
+
+![MPU6050 accelerometer module](Images/MPU6050-Sensor.jpg)
+
+**Active Buzzer**
+
+![Active buzzer module](Images/Active-Buzzer.jpg)
+
+Additional hardware photos are available in the [Images folder](Images/).
+  
+  
 ## What I Learned
 
 This project gave me more experience working with STM32 microcontrollers and connecting multiple components through I2C and GPIO. One of the main parts was getting the accelerometer readings into a useful format and making the displayed angles stable enough to read.
